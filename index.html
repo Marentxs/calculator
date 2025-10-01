@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="calculator">
-      <input id="display" readonly />
+      <input type="text" id="display" readonly />
       <button onclick="appendToDisplay('7')" id="keys">7</button>
       <button onclick="appendToDisplay('8')" id="keys">8</button>
       <button onclick="appendToDisplay('9')" id="keys">9</button>
@@ -25,5 +26,6 @@
       <button onclick="appendToDisplay('=')" id="keys">=</button>
       <button onclick="appendToDisplay('+')" id="keys">+</button>
     </div>
+    <script src="javascript.js"></script>
   </body>
 </html>
