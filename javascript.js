@@ -8,6 +8,9 @@ let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 
+equalsButton.addEventListener("click", operate);
+clearButton.addEventListener("click", clearDisplay);
+
 function appendToDisplay(value) {
   display.value += value;
 }
@@ -35,7 +38,7 @@ function divide(a, b) {
   return a / b;
 }
 
-function calculate() {
+function operate() {
   let result;
   let a = Number(firstNumber);
   let b = Number(secondNumber);
@@ -78,6 +81,3 @@ operatorButtons.forEach((button) => {
     input(button.value, "operator");
   });
 });
-
-equalsButton.addEventListener("click", calculate);
-clearButton.addEventListener("click", clearDisplay);
