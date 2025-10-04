@@ -51,15 +51,11 @@ function operate() {
   } else if (operator === "*") {
     result = multiply(a, b);
   } else if (operator === "/") {
-    result = divide(a, b);
+    result = parseFloat(divide(a, b).toFixed(2));
   }
 
-  let answer = Number.isInteger(result)
-    ? result
-    : parseFloat(result.toFixed(2));
-
-  display.value = answer;
-  firstNumber = answer;
+  display.value = result;
+  firstNumber = result;
   operator = "";
   secondNumber = "";
 }
