@@ -51,6 +51,10 @@ function operate() {
   } else if (operator === "*") {
     result = multiply(a, b);
   } else if (operator === "/") {
+    if (b === 0) {
+      display.value = "Zero says no.";
+      return;
+    }
     result = parseFloat(divide(a, b).toFixed(2));
   }
 
