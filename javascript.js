@@ -7,6 +7,7 @@ const clearButton = document.getElementById("clear");
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
+let previousOperator = "";
 
 equalsButton.addEventListener("click", operate);
 clearButton.addEventListener("click", clearDisplay);
@@ -60,6 +61,18 @@ function operate() {
 }
 
 function input(value, type) {
+  let previousOperator = operator;
+
+  if (
+    type === "operator" &&
+    operator !== "" &&
+    firstNumber !== "" &&
+    secondNumber !== ""
+  ) {
+    operate(previousOperator);
+    operator = value;
+  }
+
   if (type === "operator") {
     operator = value;
   } else if (operator === "") {
@@ -67,6 +80,7 @@ function input(value, type) {
   } else {
     secondNumber += value;
   }
+
   display.value = firstNumber + operator + secondNumber;
 }
 
