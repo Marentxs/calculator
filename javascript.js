@@ -54,8 +54,12 @@ function operate() {
     result = divide(a, b);
   }
 
-  display.value = result;
-  firstNumber = result;
+  let answer = Number.isInteger(result)
+    ? result
+    : parseFloat(result.toFixed(2));
+
+  display.value = answer;
+  firstNumber = answer;
   operator = "";
   secondNumber = "";
 }
