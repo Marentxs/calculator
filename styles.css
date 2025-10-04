@@ -7,15 +7,14 @@
 body {
   font-family: "Inter", sans-serif;
   color: #333;
-  background: #f9f9f9;
+  background: #efefef;
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
 #calculator {
-  background-color: #333;
+  background-color: hsl(0, 0%, 20%);
   max-width: 400px;
   margin: 0 auto;
   padding: 1rem;
@@ -28,12 +27,12 @@ body {
 #display {
   width: 100%;
   padding: 20px;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: right;
   border: none;
   color: #f9f9f9;
-  background-color: #5a5a5a;
-  border-radius: 20px;
+  background-color: hsl(0, 0%, 35%);
+  border-radius: 10px;
 }
 
 #keys {
@@ -45,10 +44,30 @@ body {
 button {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #0070f3;
+  background-color: hsl(0, 0%, 35%);
   color: white;
-  border-radius: 20px;
-  font-size: 2rem;
-  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.5rem;
   border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+
+button:active {
+  background-color: hsl(0, 0%, 50%);
+}
+
+.operator {
+  background-color: hsl(240, 100%, 70%);
+}
+
+.operator:hover {
+  background-color: hsl(240, 100%, 75%);
+}
+
+.operator:active {
+  background-color: hsl(240, 100%, 80%);
 }
