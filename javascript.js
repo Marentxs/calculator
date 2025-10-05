@@ -8,6 +8,7 @@ let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 let previousOperator = "";
+let justCalculated = "";
 
 equalsButton.addEventListener("click", operate);
 clearButton.addEventListener("click", clearDisplay);
@@ -62,6 +63,7 @@ function operate() {
   firstNumber = result;
   operator = "";
   secondNumber = "";
+  justCalculated = true;
 }
 
 function input(value, type) {
@@ -75,6 +77,14 @@ function input(value, type) {
   ) {
     operate(previousOperator);
     operator = value;
+    justCalculated = true;
+  }
+
+  if (type === "number" && justCalculated === true) {
+    firstNumber = value;
+    justCalculated = false;
+    display.value = firstNumber;
+    return;
   }
 
   if (type === "operator") {
