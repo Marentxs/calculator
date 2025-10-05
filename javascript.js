@@ -77,7 +77,7 @@ function input(value, type) {
   ) {
     operate(previousOperator);
     operator = value;
-    justCalculated = true;
+    justCalculated = false;
   }
 
   if (type === "number" && justCalculated === true) {
