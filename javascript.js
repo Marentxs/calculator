@@ -143,8 +143,43 @@ numberButtons.forEach((button) => {
   });
 });
 
+document.addEventListener("keydown", (event) => {
+  if ((event.key >= "0" && event.key <= "9") || event.key === ".") {
+    input(event.key, "number");
+  }
+});
+
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     input(button.value, "operator");
   });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "/" ||
+    event.key === "*" ||
+    event.key === "-" ||
+    event.key === "+"
+  ) {
+    input(event.key, "operator");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    operate();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Backspace") {
+    clearEntry();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    clearDisplay();
+  }
 });
