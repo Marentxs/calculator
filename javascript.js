@@ -84,6 +84,10 @@ function operate() {
   operator = "";
   secondNumber = "";
   justCalculated = true;
+
+  if (display.value.length > 12) {
+    display.value = Number(display.value).toExponential(6); // e.g. 1.234567e+9
+  }
 }
 
 function input(value, type) {
@@ -132,6 +136,13 @@ function input(value, type) {
     firstNumber += value;
   } else {
     secondNumber += value;
+  }
+
+  if (
+    (operator === "" && firstNumber.length >= 12 && type === "number") ||
+    (operator !== "" && secondNumber.length > 12 && type === "number")
+  ) {
+    return;
   }
 
   display.value = firstNumber + operator + secondNumber;
