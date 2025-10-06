@@ -3,6 +3,7 @@ const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const equalsButton = document.getElementById("equals");
 const clearButton = document.getElementById("clear");
+const backButton = document.getElementById("back");
 
 let firstNumber = "";
 let operator = "";
@@ -12,6 +13,18 @@ let justCalculated = "";
 
 equalsButton.addEventListener("click", operate);
 clearButton.addEventListener("click", clearDisplay);
+backButton.addEventListener("click", clearEntry);
+
+function clearEntry() {
+  if (secondNumber !== "") {
+    secondNumber = secondNumber.toString().slice(0, -1);
+  } else if (operator !== "") {
+    operator = "";
+  } else {
+    firstNumber = firstNumber.toString().slice(0, -1) || "0";
+  }
+  display.value = firstNumber + operator + secondNumber;
+}
 
 function clearDisplay() {
   firstNumber = "";
