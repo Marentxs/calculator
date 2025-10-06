@@ -13,10 +13,6 @@ let justCalculated = "";
 equalsButton.addEventListener("click", operate);
 clearButton.addEventListener("click", clearDisplay);
 
-function appendToDisplay(value) {
-  display.value += value;
-}
-
 function clearDisplay() {
   firstNumber = "";
   operator = "";
@@ -85,6 +81,11 @@ function input(value, type) {
     justCalculated = false;
     display.value = firstNumber;
     return;
+  }
+
+  if (type === "operator" && justCalculated === true) {
+    operator += value;
+    justCalculated = false;
   }
 
   if (type === "operator") {
