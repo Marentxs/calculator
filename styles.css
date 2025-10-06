@@ -38,12 +38,18 @@ body {
 #keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-auto-rows: 4rem; /* or any consistent height */
   gap: 1rem; /* spacing between buttons */
+}
+
+#clear,
+#back {
+  grid-column: span 2;
+  background-color: hsl(40, 40%, 40%);
 }
 
 button {
   width: 100%;
-  aspect-ratio: 1 / 1;
   background-color: hsl(0, 0%, 35%);
   color: white;
   border-radius: 10px;
@@ -70,4 +76,14 @@ button:active {
 
 .operator:active {
   background-color: hsl(240, 100%, 80%);
+}
+
+#clear:hover,
+#back:hover {
+  background-color: hsl(40, 40%, 50%);
+}
+
+#clear:active,
+#back:active {
+  background-color: hsl(40, 40%, 60%);
 }
