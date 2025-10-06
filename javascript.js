@@ -50,6 +50,9 @@ function operate() {
   } else if (operator === "/") {
     if (b === 0) {
       display.value = "Zero says no.";
+      firstNumber = "";
+      secondNumber = "";
+      operator = "";
       return;
     }
     result = parseFloat(divide(a, b).toFixed(2));
