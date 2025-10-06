@@ -42,17 +42,19 @@ function operate() {
   let b = Number(secondNumber);
 
   if (operator === "+") {
-    result = add(a, b);
+    result = parseFloat(add(a, b));
   } else if (operator === "-") {
-    result = substract(a, b);
+    result = parseFloat(substract(a, b));
   } else if (operator === "*") {
-    result = multiply(a, b);
+    result = parseFloat(multiply(a, b));
   } else if (operator === "/") {
     if (b === 0) {
       display.value = "Zero says no.";
       return;
     }
     result = parseFloat(divide(a, b).toFixed(2));
+  } else {
+    result = firstNumber;
   }
 
   display.value = result;
