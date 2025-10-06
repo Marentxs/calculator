@@ -21,7 +21,7 @@ function clearEntry() {
   } else if (operator !== "") {
     operator = "";
   } else {
-    firstNumber = firstNumber.toString().slice(0, -1) || "0";
+    firstNumber = firstNumber.toString().slice(0, -1);
   }
   display.value = firstNumber + operator + secondNumber;
 }
@@ -82,6 +82,14 @@ function operate() {
 
 function input(value, type) {
   let previousOperator = operator;
+
+  if (
+    value === "." &&
+    ((operator === "" && firstNumber.includes(".")) ||
+      (operator !== "" && secondNumber.includes(".")))
+  ) {
+    return;
+  }
 
   if (
     type === "operator" &&
