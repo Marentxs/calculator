@@ -15,6 +15,13 @@ equalsButton.addEventListener("click", operate);
 clearButton.addEventListener("click", clearDisplay);
 backButton.addEventListener("click", clearEntry);
 
+function clearDisplay() {
+  firstNumber = "";
+  operator = "";
+  secondNumber = "";
+  display.value = "";
+}
+
 function clearEntry() {
   if (secondNumber !== "") {
     secondNumber = secondNumber.toString().slice(0, -1);
@@ -23,14 +30,13 @@ function clearEntry() {
   } else {
     firstNumber = firstNumber.toString().slice(0, -1);
   }
-  display.value = firstNumber + operator + secondNumber;
-}
 
-function clearDisplay() {
-  firstNumber = "";
-  operator = "";
-  secondNumber = "";
-  display.value = "";
+  if (firstNumber === "" && operator === "" && secondNumber === "") {
+    clearDisplay();
+    justCalculated = false;
+    return;
+  }
+  display.value = firstNumber + operator + secondNumber;
 }
 
 function add(a, b) {
@@ -88,6 +94,12 @@ function input(value, type) {
     ((operator === "" && firstNumber.includes(".")) ||
       (operator !== "" && secondNumber.includes(".")))
   ) {
+    return;
+  }
+
+  if (value === "-" && firstNumber === "" && operator === "") {
+    firstNumber = value;
+    display.value = firstNumber;
     return;
   }
 
