@@ -140,7 +140,7 @@ function input(value, type) {
 
   if (
     (operator === "" && firstNumber.length >= 12 && type === "number") ||
-    (operator !== "" && secondNumber.length > 12 && type === "number")
+    (operator !== "" && secondNumber.length >= 12 && type === "number")
   ) {
     return;
   }
