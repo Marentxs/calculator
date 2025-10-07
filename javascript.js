@@ -117,6 +117,8 @@ function input(value, type) {
     return;
   }
 
+  if (value === "-" && firstNumber === "-") return;
+
   if (
     type === "operator" &&
     operator !== "" &&
