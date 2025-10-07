@@ -108,6 +108,16 @@ function input(value, type) {
   }
 
   if (
+    value === "-" &&
+    firstNumber !== "" &&
+    (operator === "*" || operator === "/")
+  ) {
+    secondNumber += value;
+    display.value += value;
+    return;
+  }
+
+  if (
     type === "operator" &&
     operator !== "" &&
     firstNumber !== "" &&
