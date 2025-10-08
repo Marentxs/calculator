@@ -144,3 +144,35 @@ body.dark-mode #calculator {
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+#theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: hsl(0, 0%, 35%);
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* When dark mode is active */
+body.dark-mode #theme-toggle {
+  background-color: hsl(240, 100%, 65%);
+}
+
+body.dark-mode #theme-toggle::before {
+  transform: translateX(30px);
+}
