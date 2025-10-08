@@ -168,11 +168,16 @@ body.dark-mode #calculator {
   transition: transform 0.3s ease;
 }
 
-/* When dark mode is active */
 body.dark-mode #theme-toggle {
   background-color: hsl(240, 100%, 65%);
 }
 
 body.dark-mode #theme-toggle::before {
   transform: translateX(30px);
+}
+
+.theme-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
