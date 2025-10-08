@@ -105,3 +105,42 @@ button:active {
   text-decoration: underline;
   color: hsl(40, 40%, 50%);
 }
+
+body.dark-mode {
+  background: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 90%);
+}
+
+body.dark-mode #calculator {
+  background-color: hsl(0, 0%, 20%);
+}
+
+body.dark-mode #display {
+  background-color: hsl(0, 0%, 25%);
+  color: hsl(0, 0%, 95%);
+}
+
+body.dark-mode button {
+  background-color: hsl(0, 0%, 30%);
+}
+
+body.dark-mode button:active {
+  background-color: hsl(0, 0%, 45%);
+}
+
+body.dark-mode .operator {
+  background-color: hsl(240, 100%, 65%);
+}
+
+body.dark-mode #clear,
+body.dark-mode #back {
+  background-color: hsl(40, 40%, 35%);
+}
+
+body.dark-mode #calculator {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
