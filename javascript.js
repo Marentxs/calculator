@@ -207,7 +207,22 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
+const toggleBtn = document.getElementById("theme-toggle");
+const savedTheme = localStorage.getItem("theme");
+
+// 1️⃣ Apply saved theme if it exists
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+// 2️⃣ Add event listener for the button
+toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+
+  // 3️⃣ Save the current theme
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 });
