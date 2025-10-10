@@ -12,11 +12,9 @@ Chaining Operations: Perform multiple calculations in sequence without resetting
 
 Negative Numbers: Start calculations with negative numbers.
 
-Delete Functionality: Delete a single digit or clear all input.
-
 Decimal Support: Handle decimal numbers correctly.
 
-Responsive Design: Works well on different screen sizes.
+Dark Theme: Toggle to set preference, saved upon future visits
 
 - Built With
 
